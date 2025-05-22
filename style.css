@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  background: #ffd782;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 30px;
+  font-family: Arial, sans-serif;
+}
+.runFalse {
+  opacity: 0.5;
+}
+
+#room-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* equal spacing */
+  max-width: 800px;
+  width: 100%;
+}
+#room-cards img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#room-cards img:hover {
+  transform: translateY(-10px);
+}
+#game{
+  position:absolute;
+  top: 50px;
+}
+#run {
+  margin: 20px auto 0 auto;
+  display: block;
+  background-color: #888888;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  max-width: 200px;
+}
+#weapon {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  z-index: 1000;
+}
+#taint-display {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  filter: grayscale(100%) brightness(80%) contrast(120%);
+}
+#taint-display img {
+  width: 160px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+}
+#weapon-display {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  flex-direction: column;  
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  min-height: 150px;       
+}
+#weapon-display h1 {
+  text-align: center;
+}
+#weapon-display img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#health-display {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #bf1929;
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  user-select: none;
+  z-index: 1000;
+}
+#health-display img {
+  width: 40px;
+  height: 40px;
+}
+#help-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#help{
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  color: white;
+  font-size: 18px;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 9999;
+}
+#help-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+#run:hover {
+  background-color: #666666;
+  transform: translateY(-3px);
+}

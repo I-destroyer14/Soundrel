@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scoundrel</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="game">
+<div id="room-cards"></div>
+<button id="run" onclick="Run()">RUN</button>
+<div id="weapon">
+    <div id="weapon-display"></div>
+    <div id="taint-display"></div></div>
+<div id="health-display"></div>
+</div>
+<button id="help-button">?</button>
+<div id="help"><button id="help-close">Close</button>
+<h1>Welcome to Scoundrel!</h1>
+<p>Scoundrel is a solitaire played with a normal 52 card deck excluding the red royals and aces</p>
+
+<p>In Scoundrel the player starts with 20 health (usually represented with red royals, aces, and jokers) and will lose once their health reaches 0</p>
+<p>Every suit in scoundrel has different effects to be discussed later</p>
+<p>A card's rank represents its power with number cards having power equal to their rank and the other cards powers are</p>
+<pre>Jack: 11
+Queen: 12
+King: 13
+Ace: 14</pre>
+<p>In a game of scoundrel the goal is to use up all the cards without reaching 0 health. At any point of scoundrel up to 4 cards are available to be used in the 'room'.</p> The room will be refilled back to 4 once only one card is available to be used. The player thus must use 3 of the cards before refilling the room
+<p>When acting, the player can choose to either use a room card or run.</p>
+<p>Running places the room cards at THE BACK of the deck and the run action is refreshed when the room is refilled</p>
+
+<h1>The Cards</h1>
+<p><strong>Hearts</strong> act as health potions and simply regain health equal to their power</p>
+<p><strong>Diamonds</strong> are the weapons players can pick up in the dungeon. New diamond cards will replace the current weapon. While attacking players will lose less health equal to the power of the weapon held.</p>
+<p><strong>Clubs & Spades</strong> are the monster cards in the dungeon. When used a monster card will deal damage to the player equal to the monster's rank however this can be decreased if the player decides to use a weapon. If a weapon is used while attacking the weapon will gain a 'taint' and this taint is the card attacked with a weapon.</p>
+<p>ie: A player who uses the 8 of diamonds while attacking an ace of spades (14 power) would take 6 damage and gain the ace as a taint.</p>
+
+<h1>Taints</h1>
+<p>Properly balancing taints is the most important part of Scoundrel. Once a weapon is used against a monster card, it will adopt it as a taint and that weapon can now only be used against monster cards with a lower power than the taint.</p>
+<pre>ie: A weapon tainted with a 5 monster card can only fight monster cards with powers 1-4
+Picking up a new weapon removes the taint
+
+
+The keen may realize at this point that a rough strategy is to attack higher monster cards before attacking lower monster cards
+The keener may realize that running can be used to find wanted cards
+And the keenest may realize that running does a lot more than just give new cards...</pre>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
