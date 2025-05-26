@@ -164,7 +164,7 @@ async function Run() {
   updateRunButton();
   if (room.length <= 1) {
   GameVariables.isfilling = true;
-  while (room.length < 4) {
+  while (room.length < 4 && shuffledCards.length > 0) {
       await sleep(200);
       room.push(shuffledCards.pop());
       displayRoomCards()
@@ -176,7 +176,7 @@ async function Run() {
 async function Turn() {
   if (room.length <= 1 && !GameVariables.isfilling) {
     GameVariables.isfilling = true;
-    while (room.length < 4) {
+    while (room.length < 4 && shuffledCards.length > 0) {
       GameVariables.CanRun = true;
       await sleep(200);
       room.push(shuffledCards.pop());
@@ -255,7 +255,6 @@ function UseCard(rank, suit) {
       return;
       }
 }
-  console.log(`taint: ${GameVariables.taint}`);
   const cardString = `${rankToName(rank)} ${suit}`;
   const index = room.indexOf(cardString);
   if (index !== -1) {
@@ -271,7 +270,7 @@ async function gameLoop() {
     await sleep(20);
   }
   if (room.length === 0 && shuffledCards.length === 0) {
-    alert('Game Over! No more cards left.');
+    alert('You Win! No more cards left.');
     GameVariables.health = 20;
     GameVariables.weapon = 'none';
     GameVariables.taint = 'none';
